@@ -6,7 +6,7 @@ resource "null_resource" "download_ssh_key" {
   }
   # sciaganie komenda shelowa klucza SSH na maszynke gdzie hcodzi terraform(na ktorej pracuje)
   provisioner "local-exec" {
-    command = "mkdir -p ~/.ssh/ &&  aws s3 cp s3://${var.bucket_name}/panda_kurs.pem ~/.ssh/panda_kurs.pem || true && chmod 400 ~/.ssh/panda_kurs.pem"
+    command = "mkdir -p ~/.ssh/ &&  aws s3 cp s3://${var.bucket_name}/panda_kurs.pem ~/.ssh/ || true && chmod 400 ~/.ssh/panda_kurs.pem"
   }
 }
 
